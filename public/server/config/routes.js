@@ -21,16 +21,16 @@ module.exports = function(app) {
     });
 
     // Users API
-    app.get('/helps/:id', function(req, res) {
+    app.get('/users/:id', function(req, res) {
         users.one(req, res)
     });
-    app.post('/helps/:id', function(req, res){
+    app.post('/users', function(req, res){
         users.create(req, res);
     });
-    app.put('/helps/:sid', function(req, res) {
+    app.put('/users/:sid', function(req, res) {
         users.arr_pull(req, res);
     });
-    app.delete('/helps/:id/:sid', function(req, res) {
+    app.delete('/users/:id/:sid', function(req, res) {
         users.remove(req, res);
     });
 }
