@@ -16,6 +16,13 @@
 
 <!-- <link rel="stylesheet" href="Queue.css"> -->
     <base href="/">
+    
+    <script type="text/javascript">
+        $('#map').click(function(e)
+        { console.log("clicked on image");
+           $('#marker').css('left', e.pageX).css('top', e.pageY).show();
+        });
+    </script>
 </head>
 <body>
 

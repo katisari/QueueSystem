@@ -13,6 +13,7 @@ export class SpotsComponent implements OnInit {
   all_list = [];
   count = 0;
   logged_user = "";
+  show_circle = false;
 
   constructor(private _httpService: HttpService,
     private _router: Router, private _appComp : AppComponent) { }
@@ -46,6 +47,10 @@ export class SpotsComponent implements OnInit {
       }
       index = index + 1;
     }
+  }
+  onclick(){
+    this.show_circle = true;
+    console.log("Here");                                                                                                                                                                                                                                                                                                                                                             
   }
   getName() {
     this.logged_user = this._appComp.user_name.split("Welcome ")[1];

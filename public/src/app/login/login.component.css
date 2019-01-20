@@ -41,6 +41,20 @@ div.col {
     margin: auto;
 }
 
+max_container{
+    background-image: url(/assets/images/computer-desk-electronics-238118.jpg);
+    /* background-position: center; */
+    /* margin-top: -3.7vh; */
+    /* height: 100vh; */
+    /* width: 100%; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin-top: -8.4vh; */
+    height: 100vh;
+    /* width: 100vw; */
+}
 div.form-group small {
     color: white !important;
 }
