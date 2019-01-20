@@ -31,13 +31,14 @@ io.on('connection', function(socket) {
         });
     });
     socket.on('deleteSpot', function(data){
-        var index = 0;
-        for (let individ of helpArray) {
-            if (individ.id == data.msg) {
-                helpArray.splice(index, 1);
-            }
-            index = index + 1;
-        }
+        helpArray.splice(data.msg, 1);
+        // var index = 0;
+        // for (let individ of helpArray) {
+        //     if (individ.id == data.msg) {
+        //         helpArray.splice(index, 1);
+        //     }
+        //     index = index + 1;
+        // }
         io.sockets.emit('setDeleteSpot', {
             msg: data.msg, theArray: helpArray
         });

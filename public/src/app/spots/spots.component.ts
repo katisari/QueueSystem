@@ -62,7 +62,7 @@ export class SpotsComponent implements OnInit {
 
   }
   deleteSpot(id) {
-    
+    console.log("COME ON");
     var index = 0;
     for (let individ of this.all_list) {
       if (individ.id == id) {
