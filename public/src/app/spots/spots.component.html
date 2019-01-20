@@ -69,9 +69,11 @@
           <!-- <p>This is a paragraph.</p> -->
           <p class="pos">Your Position in Queue</p>
           <ol *ngFor="let individ of all_list">
+            {{individ | json }}
             <li class="list-group-item"> Name: {{individ.Project_Name}}</li>
             <li class="list-group-item"> Date: {{individ.Date}}</li>
             <li class="list-group-item"> Method : {{individ.Method}}</li>
+            <button class="btn btn-danger" (click) = "deleteSpot(individ.id)">Delete</button>
             <!-- <li>List item 1</li>
             <li>List item 2</li>
             <li>List item 3</li> -->

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class SpotsComponent implements OnInit {
   reg = {Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
   all_list = [];
+  count = 0;
 
   constructor(private _httpService: HttpService,
     private _router: Router) { }
@@ -31,6 +32,16 @@ export class SpotsComponent implements OnInit {
       //   this.error = data['errors'];
       // }
     })
+
+  }
+  deleteSpot(id) {
+    var index = 0;
+    for (let individ of this.all_list) {
+      if (individ.id == id) {
+        this.all_list.splice(index, 1);
+      }
+      index = index + 1;
+    }
 
   }
 }

@@ -9,12 +9,14 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/public'));
 
 var helpArray = [];
+var count = 0;
 
 
 
 app.post('/createHelp', function(req,res) {
-    helpArray.push({Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
-    res.json({Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
+    helpArray.push({id: count, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
+    res.json({id: count, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
+    count = count + 1;
     // Restaurant.findOne({name: req.body.name}, function(err, data) {
     //     if (err) {
     //         res.json(err);
