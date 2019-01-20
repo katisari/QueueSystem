@@ -14,17 +14,19 @@ export class SpotsComponent implements OnInit {
   all_list = [];
   count = 0;
   logged_user = "";
-  socket: SocketIOClient.Socket;
+  socket: any;
+  // socket: SocketIOClient.Socket;
 
   constructor(private _httpService: HttpService,
-    private _router: Router, private _appComp : AppComponent) { }
+    private _router: Router, private _appComp : AppComponent) {
+      this.socket = io.connect();
+     }
 
   ngOnInit() {
     if (this.logged_user == "") {
       this.getName();
     }
     this.reg = {Student_Name: this.logged_user, Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
-    this.socket = io.connect();
     this.socket.emit('newUser');
     this.socket.on('setHelpsArray', (data: any) => {
       this.all_list = data.msg;
