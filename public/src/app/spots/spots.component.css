@@ -70,8 +70,18 @@ p {
 }
 .max_container{
     background-image: url(/assets/images/black-and-white-computer-device-331684.jpg);
-    background-position: center;
+    /* background-position: center; */
     margin-top: -3.7vh;
-    height: 100vh;
+    /* height: 100vh; */
     /* width: 100%; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin-top: -8.4vh; */
+    height: 100vh;
+    /* width: 100vw; */
+
+
+
 }
