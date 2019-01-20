@@ -1,7 +1,7 @@
 .max_container{
     background-image: url(/assets/images/computer-cup-desk-434337.jpg);
     /* background-position: center; */
-    margin-top: -6.5vh;
+    margin-top: -87.4vh;
     /* height: 100vh; */
     /* width: 100%; */
 
@@ -11,4 +11,11 @@
     /* margin-top: -8.4vh; */
     height: 100vh;
     /* width: 100vw; */
+}
+
+.iframer{
+    margin-left: 10vw;
+    /* vertical-align: center; */
+    height: 80vh;
+    width: 80vw;
 }
