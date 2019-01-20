@@ -1,3 +1,4 @@
+<h2 class="name_reserved"></h2>
 <form class="login">
   Login to our Site
   <div class="form-group">
@@ -12,28 +13,28 @@
   <button type="submit" class="btn btn-primary">Sign in!</button>
 </form>
 
-<form class="register" (click)="submitRegister()">
+<form class="register">
     Sign up now
-    <p> {{ newUser | json }} </p>
+    <!-- <p>{{ newUser | json }}  </p> -->
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="First name" name="newUser.first" [(ngModel)]="newTask.first">
+      <input type="text" class="form-control" placeholder="First name" name="newUser.first" [(ngModel)]="newUser.first">
     </div>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Last name">
     </div>
     <div class="form-group">
         <!-- <label for="exampleInputEmail1">Email address</label> -->
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp" placeholder="Enter email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <!-- <label for="exampleInputPassword1">Password</label> -->
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
     </div>
     <div class="form-group">
         <!-- <label for="exampleInputPassword1">Password</label> -->
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+      <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Confirm Password">
     </div>
-  <button type="submit" class="btn btn-primary">Sign me up!</button>
+  <button type="submit" class="btn btn-primary" (click) = "submitRegister()">Sign me up!</button>
 
 </form>

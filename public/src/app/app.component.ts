@@ -8,10 +8,4 @@ import * as $ from './../../node_modules/jquery';
 })
 export class AppComponent{
   title = 'public';
-
-  updateFirstName(name) {
-    $('#id').html(name);
-  }
- 
-
 }

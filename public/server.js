@@ -6,6 +6,9 @@ var http = require("http");
 
 app.use(express.static(__dirname + '/dist/public'));
 
+require('./server/config/mongoose.js');
+require('./server/config/routes.js')(app);
+
 app.get('/*', function(req,res) {
     
     res.sendFile(path.join(__dirname+'/dist/public/index.html'));

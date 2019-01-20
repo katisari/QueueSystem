@@ -7,12 +7,15 @@ import {HttpService} from '../http.service';
   styleUrls: ['./spots.component.css']
 })
 export class SpotsComponent implements OnInit {
+  reg = {Project_Name: "", Date: "", Method: ""};
   _http: HttpService;
   constructor() { }
 
   ngOnInit() {
+    this.reg = {Project_Name: "", Date: "", Method: ""};
   }
 
-  
+  submitButton() {
 
+  }
 }

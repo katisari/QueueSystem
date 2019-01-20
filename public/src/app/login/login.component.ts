@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import {HttpService} from '../http.service';
+import * as $ from '../../../node_modules/jquery';
 
 @Component({
   selector: 'app-login',
@@ -8,15 +9,15 @@ import {HttpService} from '../http.service';
 })
 export class LoginComponent implements OnInit {
   newUser = {first: ""};
-  _httpService:HttpService
+
   constructor() { }
 
   ngOnInit() {
     this.newUser = {first: ""};
   }
   submitRegister() {
-    this._httpService.updateFirstName(this.newUser.first);
-    this.newUser = {first: ""};
+    $('.name_reserved').html("Welcome " + this.newUser.first);
+
   }
 
 }

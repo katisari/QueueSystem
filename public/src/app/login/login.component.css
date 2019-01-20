@@ -8,7 +8,12 @@ form {
 }
 
 .register {
-    width: 45%;
+    width: 40%;
     display:inline-block;
     vertical-align: top;
+}
+
+.name_reserved {
+    float:right;
+    padding: 10px;
 }

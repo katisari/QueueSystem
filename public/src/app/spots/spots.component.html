@@ -6,19 +6,24 @@
       
       <div class="widthLimiter">
           <div class="col">
+              <p> {{reg | json}}</p>
             <p>Enter Your Information to Join the Queue</p>
           </div>
           <div class="col">
+            <form (submit)="submitButton()">
               <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">Project #</span>
+                    <input type="text" class="input-group-text" name="reg.Project_Name" [(ngModel)]="reg.Project_Name">
                   </div>
-                  <input type="text" class="form-control">
+                  <!-- <input type="text" class="form-control"> -->
                   <div class="input-group-append">
-                    <span class="input-group-text">Submit</span>
+                      <!-- <button id="submit_button" type="button" class="btn btn-secondary">Submit</button> -->
                   </div>
                 </div>
+            </form>
           </div>
+
 
         <div class="col">
             <select class="custom-select">
@@ -49,7 +54,6 @@
               Location
             </button>
         </div>
-
         <!-- <button id="btn1" class="float-right">Append text</button> -->
         <button id="btn2" class="float-right">Append list item</button>
 
