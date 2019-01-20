@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {HttpService} from '../http.service';
 import { Router } from '@angular/router';
+import {AppComponent } from '../app.component';
 
 @Component({
   selector: 'app-spots',
@@ -11,12 +12,15 @@ export class SpotsComponent implements OnInit {
   reg = {Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
   all_list = [];
   count = 0;
+  logged_user = "";
 
   constructor(private _httpService: HttpService,
-    private _router: Router) { }
+    private _router: Router, private _appComp : AppComponent) { }
 
   ngOnInit() {
     this.reg = {Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
+    this.getName();
+    
   }
 
   submitSpot() {
@@ -42,6 +46,10 @@ export class SpotsComponent implements OnInit {
       }
       index = index + 1;
     }
-
   }
+  getName() {
+    this.logged_user = this._appComp.user_name.split("Welcome ")[1];
+  }
+
+  
 }

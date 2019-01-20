@@ -13,4 +13,13 @@ export class HttpService {
     return this._http.post('/createHelp', newHelp);
   }
 
+  addNewUser(newUser) {
+    return this._http.post('/createUser', newUser);
+  }
+
+
+  getLoggedUser() {
+    return this._http.get('/getLoggedUser');
+  }
+
 }

@@ -9,14 +9,17 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + '/dist/public'));
 
 var helpArray = [];
-var count = 0;
+var userArray = [];
+var current_user_name = "";
+var countHelp = 0;
+var countUser = 0;
 
 
 
 app.post('/createHelp', function(req,res) {
-    helpArray.push({id: count, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
-    res.json({id: count, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
-    count = count + 1;
+    helpArray.push({id: countHelp, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
+    res.json({id: countHelp, Project_Name: req.body.Project_Name, Date: req.body.Date, Method: req.body.Method});
+    countHelp = countHelp + 1;
     // Restaurant.findOne({name: req.body.name}, function(err, data) {
     //     if (err) {
     //         res.json(err);
@@ -35,6 +38,16 @@ app.post('/createHelp', function(req,res) {
     //     }
     // })
 })
+
+
+app.post('/createUser', function(req,res) {
+    helpArray.push({id: countUser, name: req.body.name, email: req.body.email, password: req.body.password});
+    res.json({id: countUser, name: req.body.name, email: req.body.email, password: req.body.password});
+
+    current_user_name = req.body.name;
+    countUser = countUser + 1;
+})
+
 
 app.get('/*', function(req,res) {
     

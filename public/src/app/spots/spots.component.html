@@ -1,18 +1,16 @@
 
-
-
-
-
-
 <div class="max_container">
+
   <div class="posInQueue">Your position in the queue:</div>
 
   <div class="container-fluid">
     <div class="row">
       
       <div class="widthLimiter">
+       
           <div class="col">
-              <p> {{reg | json}}</p>
+              
+              <!-- <p> {{reg | json}}</p> -->
             <p>Enter Your Information to Join the Queue</p>
           </div>
           <div class="col">
@@ -69,7 +67,8 @@
           <!-- <p>This is a paragraph.</p> -->
           <p class="pos">Your Position in Queue</p>
           <ol *ngFor="let individ of all_list">
-            <li class="list-group-item"> Name: {{individ.Project_Name}}</li>
+            <li class="list-group-item"> Student Name: {{logged_user}}</li>
+            <li class="list-group-item"> Project Name: {{individ.Project_Name}}</li>
             <li class="list-group-item"> Date: {{individ.Date}}</li>
             <li class="list-group-item"> Method : {{individ.Method}}</li>
             <button class="btn btn-danger" (click) = "deleteSpot(individ.id)">Delete</button>
