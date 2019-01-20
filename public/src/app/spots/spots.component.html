@@ -1,15 +1,22 @@
+
+
+
+
+
+
 <div class="max_container">
   <div class="posInQueue">Your position in the queue:</div>
 
   <div class="container-fluid">
     <div class="row">
-
+      
       <div class="widthLimiter">
           <div class="col">
               <p> {{reg | json}}</p>
             <p>Enter Your Information to Join the Queue</p>
           </div>
           <div class="col">
+            <form (submit)="submitButton()">
               <div class="input-group">
                   <div class="input-group-prepend">
                     <span class="input-group-text">Project #</span>
@@ -20,21 +27,21 @@
                       <!-- <button id="submit_button" type="button" class="btn btn-secondary">Submit</button> -->
                   </div>
                 </div>
-            
+            </form>
           </div>
 
 
-        <div class="col">
+        <div class="col" >
             <select class="custom-select" name="reg.Date" [(ngModel)]="reg.Date">
-              <option selected>Select a Date</option>
-              <option value="January 19, 2019">January 19, 2019</option>
-              <option value="January 20, 2019">January 20, 2019</option>
-              <option value="January 21, 2019">January 21, 2019</option>
-              <option value="January 22, 2019">January 22, 2019</option>
-              <option value="January 23, 2019">January 23, 2019</option>
-              <option value="January 24, 2019">January 24, 2019</option>
-              <option value="January 25, 2019">January 25, 2019</option>
-            </select>
+                <option class="opt" selected>Select a Date</option>
+                <option value="1">January 19, 2019</option>
+                <option value="2">January 20, 2019</option>
+                <option value="3">January 21, 2019</option>
+                <option value="4">January 22, 2019</option>
+                <option value="5">January 23, 2019</option>
+                <option value="6">January 24, 2019</option>
+                <option value="7">January 25, 2019</option>
+              </select>
         </div>
       
 
@@ -44,8 +51,8 @@
           </button> -->
           <select class="custom-select" name="reg.Method" [(ngModel)]="reg.Method">
               <option selected>Choose Help Method</option>
-              <option value="Help Room">Help Room</option>
-              <option value="Online">Online</option>
+              <option value="1">Help Room</option>
+              <option value="2">Online</option>
             </select>
         </div>
         <div class="col">
@@ -54,12 +61,12 @@
             </button>
         </div>
         <!-- <button id="btn1" class="float-right">Append text</button> -->
+        <div class="col">
         <button id="btn2" class="float-right" (click)="submitSpot()">Append list item</button>
 
-        <div class="added_name" *ngIf="all_list">
+        <div class="added_name">
           <!-- <p>This is a paragraph.</p> -->
-          <p>Your Position in Queue</p>
-          
+          <p class="pos">Your Position in Queue</p>
           <ol *ngFor="let individ of all_list">
             <li class="list-group-item"> {{individ.Project_Name}}</li>
             <li class="list-group-item">{{individ.Date}}</li>
@@ -70,8 +77,13 @@
           </ol>
           
         </div>
+        </div>
       </div>
 
     </div>
   </div>
 </div>
+
+
+
+

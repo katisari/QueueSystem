@@ -1,7 +1,10 @@
 .max_container{
-    background-image: url(/assets/images/computer-desk-electronics-238118.jpg);
+    background-image: url(/assets/images/above-art-background-733852.jpg);
     background-position: center;
-    margin-top: -3.7vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: -8.4vh;
     height: 100vh;
-    /* width: 100%; */
+    /* width: 100vw; */
+
 }
