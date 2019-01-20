@@ -32,13 +32,16 @@ button.inclassOrOnline {
 
 button.location {
     font-size: 16px;
-    background-color: #6d757d;
-    padding: 5px;
-    border: 1px solid #6d757d;
+    background-color: white;
+    padding-left: 12px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid white;
     border-radius: 4px;
     width: 120px;
-    text-align: center;
-    color: white;
+    text-align: left;
+    color: black;
     margin: auto;
 }
 
@@ -55,8 +58,8 @@ button.input-group-text {
     outline: dotted 2px black;
 }
 span.input-group-text {
-    background-color: #6d757d;
-    color: white;
+    /* background-color: #6d757d; */
+    /* color: white; */
     border: none;
 }
 
@@ -64,9 +67,10 @@ span.input-group-text {
     text-align: right;
 }
 
-p {
+div.added_name {
     font-size: 100%;
-    margin: 0;
+    background-color: white;
+    color: black;
 }
 .max_container{
     background-image: url(/assets/images/black-and-white-computer-device-331684.jpg);
@@ -81,7 +85,4 @@ p {
     /* margin-top: -8.4vh; */
     height: 100vh;
     /* width: 100vw; */
-
-
-
 }

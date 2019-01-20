@@ -40,3 +40,7 @@ div.widthLimiter {
 div.col {
     margin: auto;
 }
+
+div.form-group small {
+    color: white !important;
+}
