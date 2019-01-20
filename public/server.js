@@ -23,9 +23,11 @@ io.on('connection', function(socket) {
         io.sockets.emit('setHelpsArray', {
             msg: helpArray
         });
+        console.log(helpArray);
     });
 
     socket.on('newSpotSubmitted', function(data){
+        console.log(helpArray);
         io.sockets.emit('setNewSpot', {
             msg: helpArray
         });
@@ -56,7 +58,7 @@ app.post('/createHelp', function(req,res) {
 
 
 app.post('/createUser', function(req,res) {
-    helpArray.push({id: countUser, name: req.body.name, email: req.body.email, password: req.body.password});
+    // helpArray.push({id: countUser, name: req.body.name, email: req.body.email, password: req.body.password});
     res.json({id: countUser, name: req.body.name, email: req.body.email, password: req.body.password});
 
     current_user_name = req.body.name;

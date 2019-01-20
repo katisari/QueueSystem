@@ -10,7 +10,7 @@ import * as io from '../../../node_modules/socket.io-client';
   styleUrls: ['./spots.component.css']
 })
 export class SpotsComponent implements OnInit {
-  reg = {Student_Name: "", Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
+  reg = {Student_Name: "", Project_Name: "", Date: "", Method: ""};
   all_list = [];
   count = 0;
   logged_user = "";
@@ -27,7 +27,9 @@ export class SpotsComponent implements OnInit {
     if (this.logged_user == "") {
       this.getName();
     }
-    this.reg = {Student_Name: this.logged_user, Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
+    this.all_list = [];
+    this.reg['Student_Name'] = this.logged_user;
+    // this.reg = {Student_Name: this.logged_user, Project_Name: "", Date: "Select a Date", Method: "Choose Help Method"};
     this.socket.emit('newUser');
     this.socket.on('setHelpsArray', (data: any) => {
       this.all_list = data.msg;
@@ -52,9 +54,9 @@ export class SpotsComponent implements OnInit {
     let observable = this._httpService.addNewHelp(this.reg);
     observable.subscribe(data => {
       console.log(data);
-      this.all_list.push(data);
+      // this.all_list.push(data);
       console.log(this.all_list);
-      this.socket.emit('newSpotSubmitted');
+      this.socket.emit('newSpotSubmitted', {msg: this.reg});
       // if (data['status'] == 200) {
       //   this._router.navigate(['/restaurants']);
       // } else {
