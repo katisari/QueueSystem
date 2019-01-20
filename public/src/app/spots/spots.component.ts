@@ -15,6 +15,7 @@ export class SpotsComponent implements OnInit {
   count = 0;
   logged_user = "";
   socket: any;
+  
   // socket: SocketIOClient.Socket;
   show_circle = false;
 
@@ -33,15 +34,18 @@ export class SpotsComponent implements OnInit {
     this.socket.emit('newUser');
     this.socket.on('setHelpsArray', (data: any) => {
       this.all_list = data.msg;
+      this.count = this.all_list.length;
       
     });
     this.socket.on('setNewSpot', (data: any) => {
       this.all_list = data.msg;
+      this.count = this.all_list.length;
       
     });
     this.socket.on('setDeleteSpot', (data: any) => {
       console.log("goes into delete");
       this.all_list = data.theArray;
+      this.count = this.all_list.length;
       // this.deleteSpot(data.msg);
       
     });

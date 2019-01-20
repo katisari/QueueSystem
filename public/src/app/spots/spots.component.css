@@ -3,6 +3,9 @@ div.widthLimiter {
     margin: 50px auto 0 auto;
     border: 2px solid #18453b;
     border-radius: 3px;
+    /* background: #F1F1F3; */
+    
+
 }
 
 div.col{
@@ -94,11 +97,19 @@ div.added_name {
     /* margin-top: -8.4vh; */
     height: 100vh;
     /* width: 100vw; */
+    /* background: #F1F1F3; */
+    /* position: absolute; */
+    
 }
 
+.container-fluid{
+    /* background: #F1F1F3; */
+}
 img{
     width: 100%;
+    
 }
+
 
 .fade-in {
 	opacity: 1;
