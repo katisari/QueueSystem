@@ -1,7 +1,7 @@
 
-<div class="max_container">
+<div class="max_container fade-in">
 
-  <div class="posInQueue">Your position in the queue:</div>
+  <!-- <div class="posInQueue">Your position in the queue:</div> -->
 
   <div class="container-fluid">
     <div class="row">
@@ -54,24 +54,33 @@
               <option value="Online">Online</option>
             </select>
         </div>
-        <div class="col">
-            <button class="location">
+        <div (click)="onclick()" class="col">
+            <!-- <button class="location">
               Location
-            </button>
+            </button> -->
+            <img src="/assets/images/circle.png" id="marker" style="display: none; position: absolute; z-index: 10000;" [ngClass]="{'show':show_circle}" />
+            <img src="/assets/images/classroom.png" id="map" />
+
+           
+
         </div>
         <!-- <button id="btn1" class="float-right">Append text</button> -->
         <div class="col">
-        <button id="btn2"  class="float-right" (click)="submitSpot()">Append list item</button>
+          <div class="submit_btn">
+              <button id="btn2" class="btn btn-success container-fluid" (click)="submitSpot()">Submit</button>
+          </div>
+       
 
         <div class="added_name">
           <!-- <p>This is a paragraph.</p> -->
-          <p class="pos">Your Position in Queue</p>
+          <p class="pos">Your Position in Queue:</p>
+
           <ol *ngFor="let individ of all_list">
             <li class="list-group-item"> Student Name: {{logged_user}}</li>
             <li class="list-group-item"> Project Name: {{individ.Project_Name}}</li>
             <li class="list-group-item"> Date: {{individ.Date}}</li>
             <li class="list-group-item"> Method : {{individ.Method}}</li>
-            <button class="btn btn-danger" (click) = "deleteSpot(individ.id)">Delete</button>
+            <button class="btn btn-danger container-fluid" (click) = "deleteSpot(individ.id)">Delete</button>
             <!-- <li>List item 1</li>
             <li>List item 2</li>
             <li>List item 3</li> -->

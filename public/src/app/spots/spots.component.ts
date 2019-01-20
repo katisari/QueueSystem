@@ -16,6 +16,7 @@ export class SpotsComponent implements OnInit {
   logged_user = "";
   socket: any;
   // socket: SocketIOClient.Socket;
+  show_circle = false;
 
   constructor(private _httpService: HttpService,
     private _router: Router, private _appComp : AppComponent) {
@@ -76,6 +77,10 @@ export class SpotsComponent implements OnInit {
       index = index + 1;
     }
 
+  }
+  onclick(){
+    this.show_circle = true;
+    console.log("Here");                                                                                                                                                                                                                                                                                                                                                             
   }
   getName() {
     if (this.logged_user == "") {
